@@ -1,4 +1,4 @@
-from repeats import Repeats
+from class_repeats import Repeats
 
 # Читаем последовательность ДНК из файла
 ch = []

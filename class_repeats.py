@@ -10,7 +10,7 @@ class Repeats():
         self.freq_b = {}
         self.freq = {}
         self.n = n
-    def count_repeats(self, a, b):
+    def count_repeats(self, a, b): # читаем повторы парных хромосом (a, b)
         for repeat in self.variants:
             a_freq = a.count(str(repeat))
             b_freq = b.count(str(repeat))
@@ -24,7 +24,7 @@ class Repeats():
             else:
                 self.freq_b[b_freq] = [str(repeat)]
 
-    def count_repeats_list(self, flist):
+    def count_repeats_list(self, flist): # считаем повторы из списка фрагментов последовательности
         for repeat in self.variants:
             for fragment in flist:
                 freq = fragment.count(str(repeat))
@@ -34,7 +34,7 @@ class Repeats():
                 else:
                     self.freq[freq] = [str(repeat)]
 
-    def max_freq(self, threshhold=10):
+    def max_freq(self, threshhold=10): # определяем наиболее часто встречаемые последовательности для пары хромосом
         max_a = {}
         max_b = {}
         for key in self.freq_a:
@@ -45,7 +45,7 @@ class Repeats():
                 max_b[key] = self.freq_b[key]
         return max_a, max_b
 
-    def max_freq_list(self, threshhold=10):
+    def max_freq_list(self, threshhold=10): # определяем наиболее часто встречаемые последовательности для списка
         max_list = {}
         for key in self.freq:
             if key > threshhold:

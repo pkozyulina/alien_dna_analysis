@@ -1,4 +1,5 @@
 ## This assembler is an unfinished vertion of graph assembler that is able to assemble only 4 alien chromosomes out of 6.
+## The working assembler is in jkondratenko branch
 
 class Graph:
     def __init__(self):
